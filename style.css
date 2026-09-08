@@ -1,0 +1,223 @@
+
+/* ========================================== /
+/ 1. GLOBAL RESETS & STYLES /
+/ ========================================== */
+•{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
+    
+    body {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    
+    }
+    
+    /* ========================================== /
+    / 2. FLEXBOX NAVBAR /
+    / ========================================== /
+    .navbar {
+    display: flex;
+    justify-content: space-between; / Logo on left, buttons on right /
+    align-items: center; / Center items vertically */
+    background-color: #121212;
+    border-bottom: 1px solid #222222;
+    padding: 16px 32px;
+    }
+    
+    .nav-brand {
+    
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    }
+    
+    .logo-symbol {
+    font-size: 24px;
+    }
+    
+    .logo-text {
+    font-size: 20px;
+    color: gold;
+    letter-spacing: 1.5px;
+    }
+    
+    .nav-actions {
+    display: flex;
+    gap: 12px;
+    }
+    
+    /* ========================================== /
+    / 3. BUTTON STATES & HOVER EFFECTS /
+    / ========================================== /
+    .btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    / Smooth transition on base class for both hover in and out */
+    transition: background-color 0.2s ease, transform 0.1s ease, border-color 0.2s ease;
+    }
+    
+    .btn-primary {
+    background-color: crimson;
+    color: #ffffff;
+    }
+    
+    .btn-primary:hover {
+    background-color: #ff2b56;
+    }
+    
+    .btn-secondary {
+    background-color: transparent;
+    color: gold;
+    border: 1px solid gold;
+    }
+    
+    .btn-secondary:hover {
+    background-color: rgba(255, 215, 0, 0.1);
+    }
+    
+    .btn:active {
+    
+    transform: scale(0.96); /* Tactile press-down effect */
+    }
+    
+    /* ========================================== /
+    / 4. MAIN LAYOUT & WELCOME SECTION /
+    / ========================================== */
+    .dashboard-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    }
+    
+    .welcome-banner {
+    margin-bottom: 32px;
+    }
+    
+    
+    .welcome-banner h2 {
+    font-size: 28px;
+    margin-bottom: 6px;
+    }
+    
+    .welcome-banner p {
+    color: #888888;
+    font-size: 15px;
+    }
+    
+    .highlight {
+    color: gold;
+    }
+    
+    /* ========================================== /
+    / 5. CSS GRID DASHBOARD CARDS /
+    / 
+    
+    ========================================== /
+    .stats-grid {
+    display: grid;
+    / Auto-responsive 2D layout: fits cards into equal columns down to 220px */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    }
+    
+    .stat-card {
+    background-color: #121212;
+    border: 1px solid #222222;
+    border-radius: 12px;
+    padding: 24px;
+    /* Smooth transform transition on hover */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    
+    
+    /* Card Hover Animation */
+    .stat-card:hover {
+    transform: translateY(-6px);
+    border-color: crimson;
+    }
+    
+    .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    }
+    
+    .card-header h3 {
+    font-size: 14px;
+    color: #888888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    }
+    
+    
+    .card-icon {
+    font-size: 20px;
+    }
+    
+    .stat-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+    }
+    
+    .stat-max {
+    font-size: 18px;
+    color: #666666;
+    }
+    
+    /* Badges */
+    .stat-badge {
+    display: inline-block;
+    
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    }
+    
+    .badge-green {
+    background-color: rgba(46, 204, 113, 0.15);
+    color: #2ecc71;
+    }
+    
+    .badge-gold {
+    background-color: rgba(255, 215, 0, 0.15);
+    color: gold;
+    }
+    
+    .badge-crimson {
+    background-color: rgba(220, 20, 60, 0.15);
+    color: crimson;
+    }
+    
+    
+    /* ========================================== /
+    / 6. RESPONSIVE MEDIA QUERIES /
+    / ========================================== /
+    @media (max-width: 600px) {
+    .navbar {
+    flex-direction: column; / Stack logo and buttons vertically on mobile */
+    gap: 16px;
+    padding: 20px;
+    }
+    
+    .nav-actions {
+    width: 100%;
+    justify-content: center;
+    }
+    
+    
+    .welcome-banner h2 {
+    font-size: 22px;
+    }
+    } 
