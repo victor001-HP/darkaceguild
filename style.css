@@ -1,6 +1,6 @@
 
 /* ========================================== /
-/ 1. GLOBAL RESETS & STYLES /
+/ 1. RESET & STYLES /
 / ========================================== */
 •{
     box-sizing: border-box;
@@ -9,215 +9,323 @@
     }
     
     body {
-    background-color: #0a0a0a;
-    color: #ffffff;
-    font-family: system-ui, -apple-system, sans-serif;
-    line-height: 1.5;
+    background-color: #0b0b0d;
+    color: #f0f0f0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     
+    line-height: 1.6;
     }
+    
+    /* Color Helper Classes */
+    .text-gold { color: #ffd700; }
+    .text-crimson { color: #ff2b56; }
     
     /* ========================================== /
     / 2. FLEXBOX NAVBAR /
-    / ========================================== /
+    / ========================================== */
     .navbar {
     display: flex;
-    justify-content: space-between; / Logo on left, buttons on right /
-    align-items: center; / Center items vertically */
-    background-color: #121212;
-    border-bottom: 1px solid #222222;
-    padding: 16px 32px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #121318;
+    border-bottom: 2px solid #ff1a40;
+    
+    padding: 14px 28px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
     }
     
     .nav-brand {
-    
     display: flex;
     align-items: center;
     gap: 12px;
     }
     
-    .logo-symbol {
-    font-size: 24px;
+    .nav-logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid #ffd700;
+    object-fit: cover;
     }
     
     .logo-text {
     font-size: 20px;
-    color: gold;
-    letter-spacing: 1.5px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 1px;
     }
     
-    .nav-actions {
-    display: flex;
-    gap: 12px;
-    }
-    
-    /* ========================================== /
-    / 3. BUTTON STATES & HOVER EFFECTS /
-    / ========================================== /
+    /* BUTTON STYLES */
     .btn {
-    padding: 10px 20px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
     border-radius: 6px;
-    font-weight: 600;
-    font-size: 14px;
+    text-align: center;
     cursor: pointer;
-    border: none;
-    / Smooth transition on base class for both hover in and out */
-    transition: background-color 0.2s ease, transform 0.1s ease, border-color 0.2s ease;
+    transition: all 0.2s ease;
     }
     
     .btn-primary {
-    background-color: crimson;
+    background: linear-gradient(135deg, #dc143c, 
+    
+    #990000);
     color: #ffffff;
+    padding: 10px 22px;
+    font-size: 14px;
+    border: 1px solid #ff4d6d;
+    box-shadow: 0 0 10px rgba(220, 20, 60, 0.4);
     }
     
     .btn-primary:hover {
-    background-color: #ff2b56;
+    background: linear-gradient(135deg, #ff2b56, #cc0000);
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px rgba(255, 43, 86, 0.7);
     }
     
-    .btn-secondary {
-    background-color: transparent;
-    color: gold;
-    border: 1px solid gold;
-    }
-    
-    .btn-secondary:hover {
-    background-color: rgba(255, 215, 0, 0.1);
-    }
-    
-    .btn:active {
-    
-    transform: scale(0.96); /* Tactile press-down effect */
+    .btn-lg {
+    padding: 14px 32px;
+    font-size: 16px;
     }
     
     /* ========================================== /
-    / 4. MAIN LAYOUT & WELCOME SECTION /
+    / 3. HERO SECTION /
     / ========================================== */
-    .dashboard-container {
+    .hero {
+    background: radial-gradient(circle at center, #1f080c 0%, #0b0b0d 100%);
+    text-align: center;
+    padding: 60px 20px 40px;
+    border-bottom: 1px solid #222;
+    }
+    
+    .hero-logo {
+    max-width: 220px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 25px rgba(220, 20, 60, 
+    
+    0.6));
+    }
+    
+    .hero-title {
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #ffffff;
+    margin-bottom: 8px;
+    }
+    
+    .hero-slogan {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffd700;
+    letter-spacing: 4px;
+    margin-bottom: 24px;
+    }
+    
+    .uid-box {
+    
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #14151b;
+    border: 1px solid #ffd700;
+    padding: 8px 20px;
+    border-radius: 30px;
+    }
+    
+    .uid-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #aaa;
+    }
+    
+    .uid-number {
+    font-size: 18px;
+    font-weight: 800;
+    color: #ffd700;
+    letter-spacing: 1px;
+    
+    }
+    
+    /* ========================================== /
+    / 4. MAIN CONTAINER & SECTIONS /
+    / ========================================== */
+    .main-container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 40px 24px;
+    padding: 40px 20px;
     }
     
-    .welcome-banner {
-    margin-bottom: 32px;
+    .section {
+    margin-bottom: 50px;
     }
     
+    .section-title {
     
-    .welcome-banner h2 {
-    font-size: 28px;
-    margin-bottom: 6px;
-    }
-    
-    .welcome-banner p {
-    color: #888888;
-    font-size: 15px;
-    }
-    
-    .highlight {
-    color: gold;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    border-left: 4px solid #ff1a40;
+    padding-left: 12px;
     }
     
     /* ========================================== /
-    / 5. CSS GRID DASHBOARD CARDS /
-    / 
-    
-    ========================================== /
+    / 5. CSS GRID STAT CARDS /
+    / ========================================== */
     .stats-grid {
     display: grid;
-    / Auto-responsive 2D layout: fits cards into equal columns down to 220px */
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    
     }
     
     .stat-card {
-    background-color: #121212;
-    border: 1px solid #222222;
-    border-radius: 12px;
+    background-color: #13141a;
+    border: 1px solid #242632;
+    border-radius: 10px;
     padding: 24px;
-    /* Smooth transform transition on hover */
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.25s ease, border-color 0.25s ease;
     }
     
-    
-    /* Card Hover Animation */
     .stat-card:hover {
-    transform: translateY(-6px);
-    border-color: crimson;
+    transform: translateY(-5px);
+    border-color: #ff1a40;
     }
     
     .card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 16px;
+    
+    margin-bottom: 12px;
     }
     
     .card-header h3 {
-    font-size: 14px;
-    color: #888888;
+    font-size: 13px;
+    color: #888899;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    }
-    
-    
-    .card-icon {
-    font-size: 20px;
+    letter-spacing: 1px;
     }
     
     .stat-number {
-    font-size: 32px;
-    font-weight: 700;
-    color: #ffffff;
+    font-size: 30px;
+    font-weight: 800;
     margin-bottom: 12px;
     }
     
     .stat-max {
     font-size: 18px;
-    color: #666666;
+    color: #666;
     }
     
-    /* Badges */
+    
     .stat-badge {
-    display: inline-block;
-    
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 11px;
+    font-weight: 700;
     padding: 4px 10px;
-    border-radius: 20px;
+    border-radius: 12px;
     }
     
-    .badge-green {
-    background-color: rgba(46, 204, 113, 0.15);
-    color: #2ecc71;
-    }
-    
-    .badge-gold {
-    background-color: rgba(255, 215, 0, 0.15);
-    color: gold;
-    }
-    
-    .badge-crimson {
-    background-color: rgba(220, 20, 60, 0.15);
-    color: crimson;
-    }
-    
+    .badge-gold { background: rgba(255, 215, 0, 0.15); color: #ffd700; }
+    .badge-green { background: rgba(46, 204, 113, 0.15); color: #2ecc71; }
+    .badge-crimson { background: rgba(220, 20, 60, 0.15); color: #ff2b56; }
     
     /* ========================================== /
-    / 6. RESPONSIVE MEDIA QUERIES /
-    / ========================================== /
-    @media (max-width: 600px) {
-    .navbar {
-    flex-direction: column; / Stack logo and buttons vertically on mobile */
-    gap: 16px;
+    / 6. LEADERSHIP & ROSTER /
+    / 
+    
+    ========================================== */
+    .roster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    }
+    
+    .player-card {
+    background-color: #13141a;
+    border: 1px solid #242632;
+    border-radius: 10px;
     padding: 20px;
+    position: relative;
     }
     
-    .nav-actions {
-    width: 100%;
-    justify-content: center;
+    .leader-card {
+    border: 1px solid #ffd700;
+    background: linear-gradient(145deg, #181512, 
+    
+    #13141a);
     }
     
-    
-    .welcome-banner h2 {
-    font-size: 22px;
+    .player-role-badge {
+    font-size: 11px;
+    font-weight: 800;
+    color: #ffd700;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
     }
-    } 
+    
+    .player-rank {
+    font-size: 11px;
+    font-weight: 700;
+    color: #888899;
+    margin-bottom: 8px;
+    }
+    
+    .player-name {
+    font-size: 20px;
+    
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 4px;
+    }
+    
+    .player-status {
+    font-size: 13px;
+    color: #aaa;
+    }
+    
+    /* ========================================== /
+    / 7. JOIN CTA & FOOTER /
+    / ========================================== */
+    .join-banner {
+    background: linear-gradient(135deg, #1c0a10, #13141a);
+    
+    border: 1px solid #ff1a40;
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    }
+    
+    .join-banner h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+    }
+    
+    .join-banner p {
+    color: #ccc;
+    margin-bottom: 24px;
+    }
+    
+    .footer {
+    text-align: center;
+    padding: 24px;
+    background-color: #08080a;
+    
+    border-top: 1px solid #1a1a20;
+    color: #666;
+    font-size: 13px;
+    }
+    
+    /* ========================================== /
+    / 8. MOBILE RESPONSIVENESS /
+    / ========================================== */
+    @media (max-width: 600px) {
+    .hero-title { font-size: 32px; }
+    .hero-slogan { font-size: 14px; letter-spacing: 2px; }
+    .navbar { padding: 12px 16px; }
+    .logo-text { font-size: 16px; }
+    }
